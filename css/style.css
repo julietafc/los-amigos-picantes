@@ -1,24 +1,70 @@
-* {
-  font-size: 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Life+Savers:wght@400;700&family=Roboto:wght@300;700&display=swap");
+
+:root {
+  --bg-color: #d44884;
+  --link-color: #33bcd4;
+  --link-hover-color: #277987;
+  --color-4: #87204d;
+  --color-5: #d4c85d;
+  --bg-sec-color: rgba(255, 255, 255, 1);
+  --primary-font: "Chelsea Market", cursive;
+  --secondary-font: "Roboto", serif;
+  --subHeader-font: "Life Savers", cursive;
+  --main-text-color: #403030;
+
+  --white-space: 1rem;
+
+  /*categories*/
+  --url-chilis: url(../assets/chiliv2.svg);
+  --url-vegetarian: url(../assets/vegetarianv2.svg);
+
+  --picture-width: 600px;
 }
 
 body {
   padding: 0;
   margin: 0;
+  font-family: var(--secondary-font);
 }
 
-/*Recipie*/
+/*-----------Recipie--------------*/
 
 .sec1,
 .sec2 {
-  width: 80%;
-  margin-left: 10%;
-  padding: 2rem 0;
-  background-color: aquamarine;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--bg-sec-color);
   display: flex;
-  gap: 2rem;
+  gap: var(--white-space);
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.sec1 {
+  padding-top: 3rem;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+}
+
+.recipeBigWraper {
+  position: relative;
+}
+
+button {
+  position: sticky;
+  top: 8rem;
+  transform: translateX(75vw);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.sec2 {
+  padding-bottom: 3rem;
+  border-radius: 0 0 2rem 2rem;
 }
 
 .sec1 .info {
@@ -26,10 +72,11 @@ body {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  width: 600px;
+  width: var(--picture-width);
 }
 
 h2 {
+  font-family: var(--primary-font);
   font-size: 3rem;
 }
 
@@ -40,30 +87,108 @@ h2 {
 }
 
 .chilis div {
-  background-color: tomato;
   height: 30px;
   width: 30px;
-  background-image: ;
+  background-image: var(--url-chilis);
+  background-size: contain;
+  opacity: 1;
 }
 
+/*no chilis */
+.chilis div:nth-child(1),
+.chilis div:nth-child(2) {
+  opacity: 0.2;
+}
+/*no chilis */
+
 .category {
-  background-color: teal;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+  background-image: var(--url-vegetarian);
+  background-size: cover;
 }
 
 figure {
   background-color: bisque;
-  height: 600px;
-  width: 600px;
-}
-
-.sec2 {
-  background-color: lightgreen;
+  height: var(--picture-width);
+  width: var(--picture-width);
+  overflow: hidden;
 }
 
 .sec2 div {
   background-color: white;
   height: 800px;
   width: 600px;
+}
+
+h3 {
+  font-family: var(--subHeader-font);
+  font-size: 2rem;
+  margin-left: 2rem;
+  margin-top: calc(2 * var(--white-space));
+}
+
+li {
+  max-width: 35ch;
+  margin-bottom: var(--white-space);
+}
+
+.recipieContainer {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: block;
+  width: 80%;
+}
+
+/*-------------------------------------*/
+
+.halfOpacity {
+  opacity: 0.2;
+}
+
+/*---------recipies list---------------*/
+
+.recipieList {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.recipieList article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.recipieList article:nth-child(odd) {
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.infoSmall {
+  width: var(--picture-width);
+}
+
+.recipieList p {
+  max-width: 35ch;
+  font-size: 1.5rem;
+}
+
+.figureSmall {
+  position: relative;
+}
+
+.figureSmall .category {
+  position: absolute;
+  background-color: var(--color-5);
+  right: 0;
+}
+
+.recipieList article:nth-child(odd) .category {
+  left: 0;
 }
