@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <body>
+
     <header>
       <h1>HELLO PICANTES</h1>
     </header>
+
+    <main>
+      <div class="recipieList"></div>
+      <div class="recipieContainer"></div>
+    </main>
+
     <footer>
       <nav>
         <ul>
@@ -18,44 +25,70 @@
           <li>Item 3</li>
         </ul>
       </nav>
-      <div>
-        Icons made by
-        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
-        <a href="https://www.flaticon.com/" title="Flaticon"
-          >www.flaticon.com</a
-        >
-      </div>
     </footer>
-    <!-- <template id="recipe"> -->
-    <section class="sec1">
-      <div class="info">
-        <h2>Recipe Name</h2>
 
-        <div class="category"></div>
+    <!-- template recipe on list -->
+    <template id="recipeSmall">
+      <article class="artRecipeSmall">
+        <div class="infoSmall">
+          <H2></H2>
+          <div class="chilis">
+            <div class="chili5"></div>
+            <div class="chili1"></div>
+            <div class="chili2"></div>
+            <div class="chili3"></div>
+            <div class="chili4"></div>
+          </div>
 
-        <div class="chilis">
-          <div class="chili5"></div>
-          <div class="chili1"></div>
-          <div class="chili2"></div>
-          <div class="chili3"></div>
-          <div class="chili4"></div>
+          </div>
+          <p></p>
         </div>
-      </div>
-      <figure>
-        <img src="" alt="" />
-        <figcaption>Picture</figcaption>
-      </figure>
-    </section>
+        <div class="figureSmall">
+          <div class="category"></div>
+          <figure>
+            <img src="" alt="">
+            <figcaption>Picture</figcaption>
+          </figure>
+        </div>
+      </article>
+    </template>
 
-    <section class="sec2">
-      <div class="ingredients">
-        <h3>Ingredients</h3>
-      </div>
-      <div class="steps">
-        <h3>Steps</h3>
-      </div>
-    </section>
+    <!-- template recipe complete -->
+    <!-- <template id="recipeBig"> -->
+
+      <div class="recipeBigWraper"></div>
+      <section class="sec1">
+        <div class="info">
+          <h2>Recipe Name</h2>
+
+          <div class="category"></div>
+
+          <div class="chilis">
+            <div class="chili5"></div>
+            <div class="chili1"></div>
+            <div class="chili2"></div>
+            <div class="chili3"></div>
+            <div class="chili4"></div>
+          </div>
+        </div>
+        <figure>
+          <img src="" alt="" />
+          <figcaption>Picture</figcaption>
+        </figure>
+      </section>
+
+      <section class="sec2">
+        <div class="ingredients">
+          <h3>Ingredients</h3>
+        </div>
+        <div class="steps">
+          <h3>Steps</h3>
+        </div>
+      </section>
+    </div>
     <!-- </template> -->
-    <script src="main.js"></script>
+
+
+    <script src="js/main.js"></script>
   </body>
 </html>
