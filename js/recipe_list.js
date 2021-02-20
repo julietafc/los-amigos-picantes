@@ -1,4 +1,5 @@
 const url = "https://kea21s-4746.restdb.io/rest/recipe-list?max=13";
+let recipeOfDay;
 
 //The API-Key
 const options = {
@@ -12,6 +13,8 @@ fetch(url, options)
   .then((data) => handleRecipeList(data));
 
 function handleRecipeList(data) {
+  recipeOfDay = data[Math.floor(Math.random() * data.length + 1)];
+  showRecipeOfDay(recipeOfDay);
   data.forEach(showRecipe);
   console.log("data");
 }
@@ -34,6 +37,8 @@ function showRecipe(recipe) {
     "img"
   ).src = `https://kea21s-4746.restdb.io/media/${recipe.img}`;
 
+  copy.querySelector(".tiempo").textContent = recipe.time;
+
   copy.querySelectorAll(".chili").forEach(spicyness);
 
   function spicyness(chile) {
@@ -48,4 +53,32 @@ function showRecipe(recipe) {
   const parent = document.querySelector("#recipeList");
   //append
   parent.appendChild(copy);
+}
+
+// -----------recipe of the day-----------------
+
+function showRecipeOfDay(recipeOfDay) {
+  console.log("recipeOfDay");
+  let noChili = Number(recipeOfDay.spicy);
+  let i = 5 - noChili;
+  let n = 0;
+
+  document.querySelector("h2").textContent = recipeOfDay.name;
+  document.querySelector(".infoMedium>p").textContent = `
+    ${recipeOfDay.category} ${recipeOfDay.description}`;
+  document.querySelector(
+    "#recipeOfDay img"
+  ).src = `https://kea21s-4746.restdb.io/media/${recipeOfDay.img}`;
+
+  document.querySelector(".tiempo").textContent = recipeOfDay.time;
+
+  document.querySelectorAll(".chili").forEach(spicyness);
+
+  function spicyness(chile) {
+    console.log(n);
+    if (n < i) {
+      chile.classList.add("halfOpacity");
+      n = n + 1;
+    }
+  }
 }
