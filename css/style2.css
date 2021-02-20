@@ -16,10 +16,15 @@
   --white-space: 1rem;
 
   /*categories*/
-  --url-chilis: url(../assets/chiliv2.svg);
+  --url-chilis: url(../assets/logo_chili_round.svg);
   --url-vegetarian: url(../assets/vegetarianv2.svg);
 
   --picture-width: 600px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -28,13 +33,17 @@ body {
   font-family: var(--secondary-font);
   background-color: var(--bg-body-color);
 }
+
 /*----navigation----------*/
 header {
   background-color: var(--bg-body-color);
+  height: max(5vw, 14vh);
   width: 100%;
   display: flex;
   justify-content: center;
-  height: auto;
+  align-items: flex-end;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 nav {
@@ -48,10 +57,12 @@ nav ul {
   color: var(--link-color);
   display: flex;
   gap: 8vw;
-  align-items: center;
+  align-items: baseline;
   list-style-type: none;
   list-style: none;
   flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
@@ -65,6 +76,12 @@ nav figure {
   width: 7vw;
   min-width: 100px;
 }
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
 /*--------------------------------*/
 /*-----homepage--------------*/
 
@@ -83,6 +100,7 @@ section.welcome {
 .welcome h1 {
   font-family: var(--primary-font);
   font-size: 5rem;
+  margin: 0;
 }
 
 .welcome figure {
@@ -170,15 +188,11 @@ div.homeButton {
 }
 
 button {
-  position: sticky;
-  top: 8rem;
-  transform: translateX(75vw);
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 0.2rem;
   background-color: var(--bg-color);
   cursor: pointer;
-  z-index: 2;
 }
 
 .sec2 {
@@ -197,6 +211,7 @@ button {
 h2 {
   font-family: var(--primary-font);
   font-size: 3rem;
+  margin: 0;
 }
 
 .chilis {
@@ -206,8 +221,8 @@ h2 {
 }
 
 .chilis div {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-image: var(--url-chilis);
   background-size: contain;
   opacity: 1;
@@ -267,6 +282,52 @@ li {
 }
 
 /*---------recipies list---------------*/
+
+/*--recipe of the day--*/
+
+#recipeOfDay {
+  width: 100%;
+
+  padding-top: var(--white-space);
+}
+
+#recipeOfDay h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 3rem;
+}
+.recipeMedium {
+  margin-top: calc(2 * var(--white-space));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8rem;
+}
+
+.infoMedium {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.infoMedium h2 {
+  font-size: 5rem;
+}
+
+.infoMedium h4 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.infoMedium p {
+  font-size: 130%;
+  max-width: 35ch;
+}
+
+.timeChili {
+  display: flex;
+  column-gap: 2rem;
+}
 
 .recipieList {
   width: 80%;
