@@ -235,7 +235,6 @@ h2 {
   width: 40px;
   background-image: var(--url-chilis);
   background-size: contain;
-  opacity: 1;
 }
 
 .watch {
@@ -247,10 +246,10 @@ h2 {
 }
 
 /*no chilis */
-.chilis div:nth-child(1),
+/* .chilis div:nth-child(1),
 .chilis div:nth-child(2) {
   opacity: 0.2;
-}
+} */
 /*no chilis */
 
 .category {
@@ -414,6 +413,7 @@ section.recipeCard {
 .iconMenu {
   display: flex;
   column-gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .iconMenu div {
@@ -427,7 +427,6 @@ section.recipeCard {
 }
 
 .iconMenu div:hover {
-  filter: grayscale(80%);
   filter: drop-shadow(2px 2px 10px rgba(119, 119, 119, 0.301)) grayscale(0);
 }
 

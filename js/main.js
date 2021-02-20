@@ -1,28 +1,16 @@
-document.querySelectorAll(".artRecipeSmall").forEach(addEvent);
-function addEvent(recipeSmall) {
-  recipeSmall.addEventListener("click", showRecipe);
-}
+const url = "https://kea21s-4746.restdb.io/rest/recipe-list?max=3";
 
-function showRecipe() {
-  document.querySelector(".recipieList").classList.add("halfOpacity");
-  //Step 1: Chose the <template>'s content
-  const template = document.querySelector("#recipeBig").content;
+//The API-Key
+const options = {
+  headers: {
+    "x-apikey": "602fe8db5ad3610fb5bb63fb",
+  },
+};
 
-  //Step 2: Make a "clone"
-  const copy = template.cloneNode(true);
+fetch(url, options)
+  .then((res) => res.json())
+  .then((data) => showProduct(data));
 
-  //Step 3: Change the content of the clone
-  //use the data from the object above (you can do this when the rest is working)
-
-  //Step 4: Chose the new "parent" element
-  //Append it to main
-  const parent = document.querySelector(".recipieContainer");
-  //Step 5: Add (Append) the clone to the DOM
-  parent.appendChild(copy);
-  document.querySelector("button").addEventListener("click", removeRecipe);
-}
-
-function removeRecipe() {
-  document.querySelector(".recipieList").classList.remove("halfOpacity");
-  document.querySelector(".recipeBigWraper").remove();
+function showProduct(recipe) {
+  console.log(recipe);
 }
