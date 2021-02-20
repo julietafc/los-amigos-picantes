@@ -15,9 +15,10 @@
 
   --white-space: 1rem;
 
-  /*categories*/
+  /*iconos*/
   --url-chilis: url(../assets/logo_chili_round.svg);
   --url-vegetarian: url(../assets/vegetarianv2.svg);
+  --url-watch: url(../assets/watch.svg);
 
   --picture-width: 600px;
 }
@@ -38,7 +39,7 @@ body {
 header {
   background-color: var(--bg-body-color);
   height: max(5vw, 14vh);
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -80,6 +81,9 @@ nav figure {
 a {
   text-decoration: none;
   color: var(--link-color);
+}
+
+main {
 }
 
 /*--------------------------------*/
@@ -188,11 +192,17 @@ div.homeButton {
 }
 
 button {
-  width: 9rem;
+  width: 10rem;
   height: 3rem;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   background-color: var(--bg-color);
   cursor: pointer;
+  color: #fffbf3;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: var(--link-hover-color);
 }
 
 .sec2 {
@@ -226,6 +236,14 @@ h2 {
   background-image: var(--url-chilis);
   background-size: contain;
   opacity: 1;
+}
+
+.watch {
+  height: 40px;
+  width: 40px;
+  background-image: var(--url-watch);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /*no chilis */
@@ -287,7 +305,6 @@ li {
 
 #recipeOfDay {
   width: 100%;
-
   padding-top: var(--white-space);
 }
 
@@ -302,6 +319,10 @@ li {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8rem;
+}
+
+.recipeMedium img {
+  max-width: 100%;
 }
 
 .infoMedium {
@@ -329,46 +350,107 @@ li {
   column-gap: 2rem;
 }
 
-.recipieList {
-  width: 80%;
-  margin-left: 10%;
+.timeChili div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.navSubcategory {
+  margin-top: 2rem;
+}
+
+#recipeList {
+  margin-top: var(--white-space);
+
+  padding-left: 2vw;
+  padding-right: 2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 410px));
+  column-gap: 2rem;
+  row-gap: 4rem;
+  padding-bottom: max(3vw, 5vh);
+  padding-top: max(3vw, 5vh);
+}
+
+section.recipeCard {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  width: min(400px, 96vw);
+  row-gap: 0.8rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(228, 228, 228, 0.424)
+  );
+  padding: 1rem;
 }
 
-.recipieList article {
+.recipeCard > figure {
+  overflow: hidden;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.recipeCard img {
+  height: 100%;
+}
+
+/*-----subcategory navigation-----*/
+
+.navSubcategory {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navSubcategory h4 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.iconMenu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.iconMenu div {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   cursor: pointer;
+  filter: grayscale(50%);
 }
 
-.recipieList article:nth-child(odd) {
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+.iconMenu div:hover {
+  filter: grayscale(80%);
+  filter: drop-shadow(2px 2px 10px rgba(119, 119, 119, 0.301)) grayscale(0);
 }
 
-.infoSmall {
-  width: var(--picture-width);
+.buttonVegan {
+  background-image: url(../assets/vegan_rc.svg);
 }
 
-.recipieList p {
-  max-width: 35ch;
-  font-size: 1.5rem;
+.buttonVegetarian {
+  background-image: url(../assets/veggie_rc.svg);
 }
 
-.figureSmall {
-  position: relative;
+.buttonBeef {
+  background-image: url(../assets/beef_rc.svg);
 }
 
-.figureSmall .category {
-  position: absolute;
-  background-color: var(--color-5);
-  right: 0;
+.buttonChicken {
+  background-image: url(../assets/chicken_rc.svg);
 }
 
-.recipieList article:nth-child(odd) .category {
-  left: 0;
+.buttonFish {
+  background-image: url(../assets/fish_rc.svg);
+}
+
+.buttonPork {
+  background-image: url(../assets/pork_rc.svg);
 }
