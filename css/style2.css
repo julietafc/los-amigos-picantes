@@ -453,3 +453,31 @@ section.recipeCard {
 .buttonPork {
   background-image: url(../assets/pork_rc.svg);
 }
+
+/* -----ingredients---steps------*/
+
+.recipeWraper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  padding: 2rem 0;
+}
+
+#ingredients-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 5rem;
+  row-gap: 2rem;
+}
+
+#ingredients-steps div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+  background-color: #d4c85d;
+  width: min(400px, 80vw);
+  border-radius: 10px;
+}
