@@ -83,6 +83,19 @@ function showRecipeOfDay(recipeOfDay) {
   document.querySelector(".ingredients").innerHTML = recipeOfDay.ingridients;
   document.querySelector(".steps").innerHTML = recipeOfDay.steps;
 
+  /*------------------breadCrombs--------------*/
+  document.querySelector(".breadcrombs a:nth-child(2)").textContent =
+    recipeOfDay.category;
+  document.querySelector(
+    ".breadcrombs a:nth-child(2)"
+  ).href = `recipe_list.html?category=${recipeOfDay.category}`;
+
+  document.querySelector(".breadcrombs a:nth-child(3)").textContent =
+    recipeOfDay.subcategory;
+  document.querySelector(".breadcrombs a:nth-child(4)").textContent =
+    recipeOfDay.name;
+
+  /*-----------chilis--------------------*/
   document.querySelectorAll(".chili").forEach(spicyness);
 
   function spicyness(chile) {

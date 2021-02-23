@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const Phrases = {
   drink: "When life gives you lemons... make margaritas",
-  appettizer: "Love at first bite",
+  appetizer: "Love at first bite",
   side: "Holy guacamole!",
   dessert: "Dessert makes everything better",
   salad: "Lettuce turnip the beet!",
