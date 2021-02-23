@@ -34,6 +34,10 @@ body {
   font-family: var(--secondary-font);
   background-color: var(--bg-body-color);
 }
+main.recipe_list {
+  width: 80%;
+  margin-left: 10%;
+}
 
 /*----navigation----------*/
 header {
@@ -365,9 +369,10 @@ li {
 .recipeMedium {
   margin-top: calc(2 * var(--white-space));
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: center;
-  gap: 8rem;
+  column-gap: 8rem;
+  row-gap: 2rem;
 }
 
 .recipeMedium figure {
