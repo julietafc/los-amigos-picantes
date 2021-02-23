@@ -573,3 +573,19 @@ section.recipeCard .categoryIndex {
 .breadcrombs a {
   text-decoration: underline;
 }
+
+/* INGRIDIENTS PAGE */
+#the_recipe_list_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.ingredient_name {
+  text-align: center;
+}
+.ingredients_text {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
