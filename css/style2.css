@@ -574,18 +574,80 @@ section.recipeCard .categoryIndex {
   text-decoration: underline;
 }
 
-/* INGRIDIENTS PAGE */
+/* INGRIDIENTS PAGE by GINTARE*/
 #the_recipe_list_section {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .ingredient_name {
   text-align: center;
 }
 .ingredients_text {
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
+}
+
+/* HERE ADDED MEDIA QUERY FOR MOBILE VIEW FOR INGREDIENT LIST, GINTARE */
+@media screen and (max-width: 700px) {
+  #the_recipe_list_section {
+    display: grid;
+    grid-template-areas:
+      "avo"
+      "avt"
+      "laim"
+      "lait"
+      "chil"
+      "chit"
+      "cila"
+      "cilt"
+      "corn"
+      "cort"
+      "garl"
+      "gart";
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients_text {
+    width: 90%;
+    margin-bottom: 30%;
+  }
+
+  .avocado {
+    grid-area: avo;
+  }
+  .avocado_text {
+    grid-area: avt;
+  }
+  .lime_img {
+    grid-area: laim;
+  }
+  .lime_text {
+    grid-area: lait;
+  }
+  .chilli_img {
+    grid-area: chil;
+  }
+  .chilli_text {
+    grid-area: chit;
+  }
+  .cilantro_img {
+    grid-area: cila;
+  }
+  .cilantro_text {
+    grid-area: cilt;
+  }
+  .corn_img {
+    grid-area: corn;
+  }
+  .corn_text {
+    grid-area: cort;
+  }
+  .garlic_img {
+    grid-area: garl;
+  }
+  .garlic_text {
+    grid-area: gart;
+  }
 }
