@@ -70,7 +70,7 @@ function showRecipe(recipe) {
 
   copy.querySelector(
     ".categoryIndex"
-  ).style.backgroundImage = ` url(/assets/${recipe.subcategory}_rc.svg)`;
+  ).style.backgroundImage = ` url(assets/${recipe.subcategory}_rc.svg)`;
 
   copy.querySelector(".recipeCard a").href = `recipe.html?id=${recipe._id}`;
 
