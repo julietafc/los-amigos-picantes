@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const Phrases = {
   drink: "When life gives you lemons... make margaritas",
-  appettizer: "Love at first bite",
+  appetizer: "Love at first bite",
   side: "Holy guacamole!",
   dessert: "Dessert makes everything better",
   salad: "Lettuce turnip the beet!",
@@ -147,6 +147,9 @@ function subCategory() {
       "category"
     )}" , "subcategory":"${classNameC.toLowerCase()}"}`;
   }
+  document.querySelector(
+    ".breadcrombs a:nth-child(3)"
+  ).textContent = classNameC.toLowerCase();
 
   let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
   fetch(newurl, options)

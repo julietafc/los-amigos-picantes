@@ -16,7 +16,7 @@
   --white-space: 1rem;
 
   /*iconos*/
-  --url-chilis: url(../assets/logo_chili_round.svg);
+  --url-chilis: url(../assets/chili_full.svg);
   --url-vegetarian: url(../assets/vegetarianv2.svg);
   --url-watch: url(../assets/watch.svg);
 
@@ -34,6 +34,7 @@ body {
   font-family: var(--secondary-font);
   background-color: var(--bg-body-color);
 }
+
 main.recipe_list {
   width: 80%;
   margin-left: 10%;
@@ -42,8 +43,7 @@ main.recipe_list {
 /*----navigation----------*/
 header {
   background-color: var(--bg-body-color);
-  height: max(5vw, 14vh);
-
+  height: 6vw;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -61,7 +61,8 @@ nav ul {
   font-size: 1.5rem;
   color: var(--link-color);
   display: flex;
-  gap: 8vw;
+  column-gap: 8vw;
+  row-gap: 1rem;
   align-items: baseline;
   list-style-type: none;
   list-style: none;
@@ -253,6 +254,8 @@ button {
   cursor: pointer;
   color: #fffbf3;
   font-size: 1.2rem;
+  font-family: var(--subHeader-font);
+  font-weight: bold;
 }
 
 button:hover {
@@ -285,8 +288,8 @@ h2 {
 }
 
 .chilis div {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-image: var(--url-chilis);
   background-size: contain;
 }
@@ -297,6 +300,11 @@ h2 {
   background-image: var(--url-watch);
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.timeChili > div > p {
+  font-family: var(--subHeader-font);
+  font-weight: bold;
 }
 
 /*no chilis */
@@ -365,6 +373,7 @@ li {
   text-align: center;
   margin: 0;
   font-size: 3rem;
+  font-weight: lighter;
 }
 .recipeMedium {
   margin-top: calc(2 * var(--white-space));
@@ -404,11 +413,12 @@ li {
 .infoMedium h4 {
   font-size: 2rem;
   font-weight: lighter;
+  font-family: var(--subHeader-font);
 }
 
 .infoMedium p {
   font-size: 130%;
-  max-width: 45ch;
+  max-width: 40ch;
 }
 
 .timeChili {
@@ -423,16 +433,12 @@ li {
 
 .navSubcategory {
   margin-top: 3rem;
-  padding-left: 3vw;
 }
 
 #recipeList {
   margin-top: var(--white-space);
-
-  padding-left: 2vw;
-  padding-right: 2vw;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 410px));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 420px));
   column-gap: 2rem;
   row-gap: 4rem;
   padding-bottom: max(3vw, 5vh);
@@ -442,7 +448,7 @@ li {
 section.recipeCard {
   display: flex;
   flex-direction: column;
-  width: min(400px, 96vw);
+  width: min(400px, 82vw);
   row-gap: 0.8rem;
   background-image: linear-gradient(
     to bottom,
@@ -492,6 +498,7 @@ section.recipeCard .categoryIndex {
   display: flex;
   column-gap: 2rem;
   flex-wrap: wrap;
+  row-gap: 2rem;
 }
 
 .iconMenu div {
@@ -573,6 +580,110 @@ section.recipeCard .categoryIndex {
 .breadcrombs a {
   text-decoration: underline;
 }
+.breadcrombs p {
+  text-transform: capitalize;
+}
+
+/* -----about------ */
+.aboutWraper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  padding: 2rem 0;
+  flex-direction: column-reverse;
+}
+
+.aboutMedium {
+  margin-top: calc(2 * var(--white-space));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.aboutMedium img {
+  width: 55vw;
+  min-height: auto;
+}
+
+.infoAbout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.infoAbout h2 {
+  font-size: 5rem;
+  text-align: left;
+}
+
+.infoAbout p {
+  font-size: 130%;
+  max-width: 35ch;
+  text-align: left;
+}
+
+/* -----footer------ */
+
+.footer {
+  background-color: var(--link-hover-color);
+  position: absolute;
+  width: 100%;
+  padding: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5em;
+}
+
+.footer img {
+  padding-left: 2em;
+  width: 8em;
+}
+
+.footer p {
+  color: var(--bg-body-color);
+  font-family: var(--subHeader-font);
+}
+
+.footer nav {
+  text-align: right;
+  padding-right: 2em;
+}
+
+.footer nav ul li {
+  margin: 0;
+}
+
+.footer nav ul {
+  font-family: var(--secondary-font);
+  font-weight: 100;
+  font-size: 1rem;
+  display: inline;
+}
+
+.footer nav ul li a {
+  font-family: var(--subHeader-font);
+  color: var(--bg-body-color);
+}
+
+.footer nav ul li:hover {
+  text-decoration: underline;
+}
+
+.some {
+  display: flex;
+  flex-direction: column;
+}
+.some li {
+  display: inline;
+}
+
+.some li a img {
+  width: 2em;
+  margin-top: 3em;
+  padding-left: 0;
+  margin: 3em 1em 0 1em;
+}
 
 /* INGRIDIENTS PAGE by GINTARE*/
 #the_recipe_list_section {
@@ -649,5 +760,14 @@ section.recipeCard .categoryIndex {
   }
   .garlic_text {
     grid-area: gart;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header {
+    height: 22vh;
+  }
+  #recipeList {
+    margin-left: -5%;
   }
 }
