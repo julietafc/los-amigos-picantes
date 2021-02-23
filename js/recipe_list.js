@@ -1,11 +1,29 @@
 const urlParams = new URLSearchParams(window.location.search);
 
+const Phrases = {
+  drink: "When life gives you lemons... make margaritas",
+  appettizer: "Love at first bite",
+  side: "Holy guacamole!",
+  dessert: "Dessert makes everything better",
+  salad: "Lettuce turnip the beet!",
+  main: "Nothing brings people together like good food",
+};
+
 let categoryId = `&q={"category":"${urlParams.get("category")}"}`;
+
 if (urlParams.get("category") == "all") {
+  document.querySelector("#recipeOfDay h1").textContent = Phrases.drink;
   categoryId = " ";
+} else {
+  const Phrase = Phrases[urlParams.get("category")];
+  document.querySelector("#recipeOfDay h1").textContent = Phrase;
 }
+
+document.querySelector(
+  ".breadcrombs a:nth-child(2)"
+).textContent = urlParams.get("category");
 // const subcategoryId = urlParams.get("subcategory");
-let className;
+let classNameC;
 let subcategoryId;
 let recipeOfTheDay = false;
 let recipe;
@@ -121,13 +139,13 @@ document.querySelectorAll(".iconMenu div").forEach((item) => {
 function subCategory() {
   console.log("subCategory");
   removeRecipeCard();
-  className = this.classList.item(0);
+  classNameC = this.classList.item(0);
   if (urlParams.get("category") == "all") {
-    subcategoryId = `&q={"subcategory":"${className.toLowerCase()}"}`;
+    subcategoryId = `&q={"subcategory":"${classNameC.toLowerCase()}"}`;
   } else {
     subcategoryId = `&q={"category":"${urlParams.get(
       "category"
-    )}" , "subcategory":"${className.toLowerCase()}"}`;
+    )}" , "subcategory":"${classNameC.toLowerCase()}"}`;
   }
 
   let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
