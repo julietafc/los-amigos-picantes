@@ -81,7 +81,13 @@ function showRecipeOfDay(recipeOfDay) {
   document.querySelector(".tiempo").textContent = recipeOfDay.time;
 
   document.querySelector(".ingredients").innerHTML = recipeOfDay.ingridients;
+  document
+    .querySelector(".ingredients")
+    .parentElement.classList.add(`${recipeOfDay.subcategory}bb`);
   document.querySelector(".steps").innerHTML = recipeOfDay.steps;
+  document
+    .querySelector(".steps")
+    .parentElement.classList.add(`${recipeOfDay.subcategory}bb`);
 
   /*------------------breadCrombs--------------*/
   document.querySelector(".breadcrombs a:nth-child(2)").textContent =

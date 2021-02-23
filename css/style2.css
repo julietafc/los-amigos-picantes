@@ -111,7 +111,7 @@ section.welcome {
 }
 
 .welcome figure {
-  width: 15%;
+  width: 25%;
 }
 
 .welcome p {
@@ -372,7 +372,7 @@ li {
 #recipeOfDay h1 {
   text-align: center;
   margin: 0;
-  font-size: 3rem;
+  font-size: 4.2rem;
   font-weight: lighter;
 }
 .recipeMedium {
@@ -406,12 +406,12 @@ li {
 }
 
 .infoMedium h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   max-width: 25ch;
 }
 
 .infoMedium h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: lighter;
   font-family: var(--subHeader-font);
 }
@@ -562,12 +562,44 @@ section.recipeCard .categoryIndex {
   row-gap: 2rem;
   padding-left: 3rem;
   padding-top: 2rem;
-  background-color: #d4c85d;
+  padding-bottom: 2rem;
   width: min(400px, 80vw);
   border-radius: 10px;
 }
 
+.porkbb {
+  color: #ea4c93;
+  background-color: #ffddf0;
+}
+.beefbb {
+  color: #ef3c38;
+  background-color: #f9c7c7;
+}
+.fishbb {
+  color: #05a8a0;
+  background-color: #c5e4e1;
+}
+.chickenbb {
+  color: #ff852e;
+  background-color: #f4d3ba;
+}
+.vegetarianbb {
+  color: #71a334;
+  background-color: #e4edd1;
+}
+.veganbb {
+  color: #09863f;
+  background-color: #abd8bd;
+}
+
+.drinkbb {
+  color: #7421ac;
+  background-color: #d0a8eb;
+}
+
+/*--------bread crombs----------------*/
 .breadcrombs {
+  margin-top: var(--white-space);
   display: flex;
   justify-content: center;
 }
