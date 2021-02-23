@@ -613,24 +613,3 @@ section.recipeCard .categoryIndex {
 .footer nav ul li:hover {
   text-decoration: underline;
 }
-
-/* nav ul {
-    font-family: var(--subHeader-font);
-    font-weight: bold;
-    font-size: 1.5rem;
-
-    display: flex;
-    gap: 8vw;
-    align-items: baseline;
-    list-style-type: none;
-    list-style: none;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    text-decoration: none;
-    text-decoration-style: none;
-    cursor: pointer;
-  } */
