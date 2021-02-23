@@ -16,7 +16,7 @@
   --white-space: 1rem;
 
   /*iconos*/
-  --url-chilis: url(../assets/chili_full.svg);
+  --url-chilis: url(../assets/logo_chili_round.svg);
   --url-vegetarian: url(../assets/vegetarianv2.svg);
   --url-watch: url(../assets/watch.svg);
 
@@ -35,15 +35,10 @@ body {
   background-color: var(--bg-body-color);
 }
 
-main.recipe_list {
-  width: 80%;
-  margin-left: 10%;
-}
-
 /*----navigation----------*/
 header {
   background-color: var(--bg-body-color);
-  height: 6vw;
+  height: max(5vw, 14vh);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -61,8 +56,7 @@ nav ul {
   font-size: 1.5rem;
   color: var(--link-color);
   display: flex;
-  column-gap: 8vw;
-  row-gap: 1rem;
+  gap: 8vw;
   align-items: baseline;
   list-style-type: none;
   list-style: none;
@@ -254,8 +248,6 @@ button {
   cursor: pointer;
   color: #fffbf3;
   font-size: 1.2rem;
-  font-family: var(--subHeader-font);
-  font-weight: bold;
 }
 
 button:hover {
@@ -288,8 +280,8 @@ h2 {
 }
 
 .chilis div {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-image: var(--url-chilis);
   background-size: contain;
 }
@@ -300,11 +292,6 @@ h2 {
   background-image: var(--url-watch);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.timeChili > div > p {
-  font-family: var(--subHeader-font);
-  font-weight: bold;
 }
 
 /*no chilis */
@@ -373,15 +360,13 @@ li {
   text-align: center;
   margin: 0;
   font-size: 3rem;
-  font-weight: lighter;
 }
 .recipeMedium {
   margin-top: calc(2 * var(--white-space));
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: center;
-  column-gap: 8rem;
-  row-gap: 2rem;
+  gap: 8rem;
 }
 
 .recipeMedium figure {
@@ -413,12 +398,11 @@ li {
 .infoMedium h4 {
   font-size: 2rem;
   font-weight: lighter;
-  font-family: var(--subHeader-font);
 }
 
 .infoMedium p {
   font-size: 130%;
-  max-width: 40ch;
+  max-width: 45ch;
 }
 
 .timeChili {
@@ -433,12 +417,16 @@ li {
 
 .navSubcategory {
   margin-top: 3rem;
+  padding-left: 3vw;
 }
 
 #recipeList {
   margin-top: var(--white-space);
+
+  padding-left: 2vw;
+  padding-right: 2vw;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 420px));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 410px));
   column-gap: 2rem;
   row-gap: 4rem;
   padding-bottom: max(3vw, 5vh);
@@ -448,7 +436,7 @@ li {
 section.recipeCard {
   display: flex;
   flex-direction: column;
-  width: min(400px, 82vw);
+  width: min(400px, 96vw);
   row-gap: 0.8rem;
   background-image: linear-gradient(
     to bottom,
@@ -498,7 +486,6 @@ section.recipeCard .categoryIndex {
   display: flex;
   column-gap: 2rem;
   flex-wrap: wrap;
-  row-gap: 2rem;
 }
 
 .iconMenu div {
@@ -579,10 +566,6 @@ section.recipeCard .categoryIndex {
 }
 .breadcrombs a {
   text-decoration: underline;
-}
-
-.breadcrombs p {
-  text-transform: capitalize;
 }
 
 /* -----about------ */
@@ -684,13 +667,4 @@ section.recipeCard .categoryIndex {
   margin-top: 3em;
   padding-left: 0;
   margin: 3em 1em 0 1em;
-}
-
-@media only screen and (max-width: 400px) {
-  header {
-    height: 22vh;
-  }
-  #recipeList {
-    margin-left: -5%;
-  }
 }

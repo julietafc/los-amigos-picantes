@@ -147,6 +147,9 @@ function subCategory() {
       "category"
     )}" , "subcategory":"${classNameC.toLowerCase()}"}`;
   }
+  document.querySelector(
+    ".breadcrombs a:nth-child(3)"
+  ).textContent = classNameC.toLowerCase();
 
   let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
   fetch(newurl, options)
