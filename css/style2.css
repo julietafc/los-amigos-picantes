@@ -99,6 +99,7 @@ section.welcome {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 2rem;
 }
 
 .welcome h1 {
@@ -141,12 +142,6 @@ div.categoryMenu {
 }
 
 div.homeButton {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(179, 179, 179, 0.342),
-      rgba(70, 49, 64, 0.73)
-    ),
-    url(../assets/ella-olsson-4dQiaWKiL-Y-unsplash.jpg);
   height: 15vw;
   width: 15vw;
   min-width: 100px;
@@ -155,9 +150,67 @@ div.homeButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 250%;
+  background-size: 100%;
   margin-left: 2vw;
   cursor: pointer;
+}
+
+div.homeButton:hover {
+  filter: drop-shadow(2px 2px 10px rgba(119, 119, 119, 0.7)) saturate(1.5);
+}
+
+#main {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/MAIN_ryan-concepcion-50KffXbjIOg-unsplash.jpg);
+}
+
+#salads {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/SALAD_pexels-alesia-kozik-6544388-1.jpg);
+}
+
+#appetizer {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/APPETIZER_diego-lozano-Ou54iFyr-Uk-unsplash.jpg);
+}
+
+#drinks {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/DRINK_taylor-simpson-C__YNhhO7T0-unsplash.jpg);
+}
+
+#sides {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/SIDES_pexels-dayvison-de-oliveira-silva-5696558.jpg);
+}
+
+#deserts {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 179, 179, 0.35),
+      rgba(70, 49, 64, 0.73)
+    ),
+    url(../assets/DESSERT_chris-reyem-WLOabgHQUCQ-unsplash.jpg);
 }
 
 .categoryMenu h2 {
@@ -226,7 +279,7 @@ h2 {
 
 .chilis {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   gap: 1rem;
 }
 
@@ -316,12 +369,23 @@ li {
   margin-top: calc(2 * var(--white-space));
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 8rem;
 }
 
+.recipeMedium figure {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  max-width: min(100vw, 600px);
+  height: max(30vw, 600px);
+}
+
 .recipeMedium img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: auto;
+  min-height: 100%;
 }
 
 .infoMedium {
@@ -332,6 +396,7 @@ li {
 
 .infoMedium h2 {
   font-size: 5rem;
+  max-width: 25ch;
 }
 
 .infoMedium h4 {
@@ -355,7 +420,8 @@ li {
 }
 
 .navSubcategory {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  padding-left: 3vw;
 }
 
 #recipeList {
@@ -382,6 +448,16 @@ section.recipeCard {
     rgba(228, 228, 228, 0.424)
   );
   padding: 1rem;
+  position: relative;
+}
+
+section.recipeCard .categoryIndex {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  background-size: cover;
 }
 
 .recipeCard > figure {
@@ -401,7 +477,7 @@ section.recipeCard {
 
 .navSubcategory {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -430,27 +506,27 @@ section.recipeCard {
   filter: drop-shadow(2px 2px 10px rgba(119, 119, 119, 0.301)) grayscale(0);
 }
 
-.buttonVegan {
+.Vegan {
   background-image: url(../assets/vegan_rc.svg);
 }
 
-.buttonVegetarian {
-  background-image: url(../assets/veggie_rc.svg);
+.Vegetarian {
+  background-image: url(../assets/vegetarian_rc.svg);
 }
 
-.buttonBeef {
+.Beef {
   background-image: url(../assets/beef_rc.svg);
 }
 
-.buttonChicken {
+.Chicken {
   background-image: url(../assets/chicken_rc.svg);
 }
 
-.buttonFish {
+.Fish {
   background-image: url(../assets/fish_rc.svg);
 }
 
-.buttonPork {
+.Pork {
   background-image: url(../assets/pork_rc.svg);
 }
 
@@ -480,4 +556,18 @@ section.recipeCard {
   background-color: #d4c85d;
   width: min(400px, 80vw);
   border-radius: 10px;
+}
+
+.breadcrombs {
+  display: flex;
+  justify-content: center;
+}
+
+.breadcrombs a,
+.breadcrombs p {
+  color: #817a7a;
+  font-size: 1.5rem;
+}
+.breadcrombs a {
+  text-decoration: underline;
 }

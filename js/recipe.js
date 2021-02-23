@@ -1,4 +1,9 @@
-const url = "https://kea21s-4746.restdb.io/rest/recipe-list?max=13";
+const urlParams = new URLSearchParams(window.location.search);
+
+let recipeId = urlParams.get("id");
+
+const url = `https://kea21s-4746.restdb.io/rest/recipe-list?q={"_id": "${recipeId}"}`;
+
 let recipeOfDay;
 
 //The API-Key
@@ -13,7 +18,7 @@ fetch(url, options)
   .then((data) => handleRecipeList(data));
 
 function handleRecipeList(data) {
-  recipeOfDay = data[Math.floor(Math.random() * data.length + 1)];
+  recipeOfDay = data[0];
   showRecipeOfDay(recipeOfDay);
   //   data.forEach(showRecipe);
   console.log("data");
@@ -48,6 +53,9 @@ function showRecipe(recipe) {
       n = n + 1;
     }
   }
+
+  copy.pseudoStyle("before", "content", "'test'");
+  copy.pseudoStyle("before", "color", "purple");
 
   //grab parent
   const parent = document.querySelector("#recipeList");

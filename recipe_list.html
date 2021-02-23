@@ -30,8 +30,12 @@
       </nav>
     </header>
     <main>
+      <div class="breadcrombs">
+        <p><a href="">Recipes</a> | <a href="">All</a> | <a href=""></a></p>
+      </div>
       <section id="recipeOfDay">
         <h1>COOL PHRASE ABOUT THE VEGETARIAN WORLD</h1>
+
         <div class="recipeMedium">
           <div class="infoMedium">
             <h4>RECIPE OF THE DAY</h4>
@@ -55,7 +59,7 @@
               small tortilla, rolled up with some type of filling, usually made
               from beef or chicken.
             </p>
-            <a href="recipe.html"><button>link to recipe</button></a>
+            <a href="recipe.html"><button>go to recipe</button></a>
           </div>
           <figure>
             <img src="assets/shutterstock_1020793849-1000.jpg" alt="" />
@@ -66,51 +70,23 @@
       <!-- ----navigation subcategory--- -->
 
       <nav class="navSubcategory">
-        <div><h4>SELECT RECIPE</h4></div>
         <div class="iconMenu">
-          <div class="buttonVegan"></div>
-          <div class="buttonVegetarian"></div>
-          <div class="buttonBeef"></div>
-          <div class="buttonChicken"></div>
-          <div class="buttonFish"></div>
-          <div class="buttonPork"></div>
+          <div class="Vegan"></div>
+          <div class="Vegetarian"></div>
+          <div class="Beef"></div>
+          <div class="Chicken"></div>
+          <div class="Fish"></div>
+          <div class="Pork"></div>
         </div>
       </nav>
 
       <!-- ----navigation product list--- -->
 
-      <div id="recipeList">
-        <section class="recipeCard">
-          <figure>
-            <img src="assets/shutterstock_1020793849-1000.jpg" alt="" />
-          </figure>
-          <div>
-            <div class="timeChili">
-              <div>
-                <div class="watch"></div>
-                <p><span class="tiempo">20</span> min.</p>
-              </div>
-              <div class="chilis">
-                <div class="chili"></div>
-                <div class="chili"></div>
-                <div class="chili"></div>
-                <div class="chili"></div>
-                <div class="chili"></div>
-              </div>
-            </div>
-          </div>
-          <h2>Recipe Name</h2>
-          <p>
-            Description: popular in other countries around the world, which
-            consists of a small tortilla, rolled up with some type of filling,
-            usually made from beef or chicken
-          </p>
-          <a href="recipe.html"><button>link to recipe</button></a>
-        </section>
-      </div>
+      <div id="recipeList"></div>
 
       <template id="recipeCardTemplate">
         <section class="recipeCard">
+          <div class="categoryIndex"></div>
           <figure>
             <img src="assets/shutterstock_1020793849-1000.jpg" alt="" />
           </figure>
@@ -135,7 +111,7 @@
             consists of a small tortilla, rolled up with some type of filling,
             usually made from beef or chicken
           </p>
-          <a href="recipe.html"><button>link to recipe</button></a>
+          <a href="recipe.html"><button>go to recipe</button></a>
         </section>
       </template>
     </main>

@@ -12,7 +12,7 @@
       <nav>
         <ul>
           <li>About</li>
-          <li><a href="recipe_list.html">Recipes</a></li>
+          <li><a href="recipe_list.html?category=all">Recipes</a></li>
           <li>
             <figure>
               <img
@@ -31,7 +31,7 @@
       <section class="welcome">
         <h1>WELCOME TO</h1>
         <figure>
-          <img src="assets/logo_color.svg" alt="logotipo" class="logo" />
+          <img src="assets/logo_centered.svg" alt="logotipo" class="logo" />
         </figure>
         <p>
           The discovery of the text's origin is attributed to Richard
@@ -44,12 +44,18 @@
       <section class="categoryMenu">
         <!-- <h2>SELECT A CATEGORY</h2> -->
         <div class="categoryMenu">
-          <div id="main" class="homeButton"><h2>MAIN</h2></div>
-          <div id="salads" class="homeButton"><h2>SALADS</h2></div>
-          <div id="dips" class="homeButton"><h2>APPETIZER</h2></div>
-          <div id="drinks" class="homeButton"><h2>DRINKS</h2></div>
-          <div id="sides" class="homeButton"><h2>SIDES</h2></div>
-          <div id="deserts" class="homeButton"><h2>DESSERTS</h2></div>
+          <a href="recipe_list.html?category=main">
+            <div id="main" class="homeButton"><h2>MAIN</h2></div></a
+          >
+          <a href="recipe_list.html?category=salad"><div id="salads" class="homeButton"><h2>SALADS</h2></div></a>
+
+          <a href="recipe_list.html?category=appetizer"><div id="appetizer" class="homeButton"><h2>APPETIZER</h2></div></a>
+
+          <a href="recipe_list.html?category=drink"><div id="drinks" class="homeButton"><h2>DRINKS</h2></div></a>
+
+          <a href="recipe_list.html?category=side"><div id="sides" class="homeButton"><h2>SIDES</h2></div></a>
+
+          <a href="recipe_list.html?category=dessert"><div id="deserts" class="homeButton"><h2>DESSERTS</h2></div>
         </div>
       </section>
     </main>
