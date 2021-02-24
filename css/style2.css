@@ -43,7 +43,7 @@ main.recipe_list {
 /*----navigation----------*/
 header {
   background-color: var(--bg-body-color);
-  height: 6vw;
+  height: max(6vw, 100px);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -97,6 +97,16 @@ section.welcome {
   background-image: url(../assets/ella-olsson-4dQiaWKiL-Y-unsplash.jpg);
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+section.welcome .welcomeWraper {
+  padding: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -731,6 +741,12 @@ section.recipeCard .categoryIndex {
   margin: auto;
 }
 
+@media screen and (max-width: 1030px) {
+  section.welcome .welcomeWraper {
+    background-color: rgba(226, 224, 224, 0.4);
+  }
+}
+
 /* HERE ADDED MEDIA QUERY FOR MOBILE VIEW FOR INGREDIENT LIST, GINTARE */
 @media screen and (max-width: 700px) {
   #the_recipe_list_section {
@@ -793,12 +809,17 @@ section.recipeCard .categoryIndex {
   .garlic_text {
     grid-area: gart;
   }
-}
 
-@media only screen and (max-width: 400px) {
   header {
     height: 22vh;
   }
+
+  header nav ul li:nth-child(3) {
+    order: -1;
+  }
+}
+
+@media only screen and (max-width: 400px) {
   #recipeList {
     margin-left: -5%;
   }
