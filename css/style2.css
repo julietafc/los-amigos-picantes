@@ -809,7 +809,7 @@ section.recipeCard .categoryIndex {
   .garlic_text {
     grid-area: gart;
   }
-
+  /*------header------*/
   header {
     height: 22vh;
   }
@@ -820,6 +820,39 @@ section.recipeCard .categoryIndex {
 }
 
 @media only screen and (max-width: 400px) {
+  .aboutMedium img {
+    display: none;
+  }
+
+  .aboutWraper {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url(../assets/banner.svg);
+    background-size: cover;
+    padding-bottom: 3rem;
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+
+  .infoAbout {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .infoAbout h2 {
+    text-align: center;
+  }
+
+  .infoAbout p {
+    max-width: 30ch;
+  }
+
   #recipeOfDay h1 {
     font-size: 3.5rem;
   }
