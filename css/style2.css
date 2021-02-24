@@ -16,9 +16,9 @@
   --white-space: 1rem;
 
   /*iconos*/
-  --url-chilis: url(../assets/chili_full.svg);
+  --chilis: url(../assets/chili_full.svg);
   --url-vegetarian: url(../assets/vegetarianv2.svg);
-  --url-watch: url(../assets/watch.svg);
+  --watch: url(../assets/watch.svg);
 
   --picture-width: 600px;
 }
@@ -241,7 +241,7 @@ div.homeButton:hover {
   padding: 1rem 0;
   background-color: var(--bg-sec-color);
   display: flex;
-  gap: var(--white-space);
+  gap: 1rem
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -300,14 +300,14 @@ h2 {
 .chilis div {
   height: 30px;
   width: 30px;
-  background-image: var(--url-chilis);
+  background-image: url(../assets/chili_full.svg);
   background-size: contain;
 }
 
 .watch {
   height: 40px;
   width: 40px;
-  background-image: var(--url-watch);
+  background-image: url(../assets/watch.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -348,12 +348,12 @@ h3 {
   font-family: var(--subHeader-font);
   font-size: 2rem;
   margin-left: 2rem;
-  margin-top: calc(2 * var(--white-space));
+  margin-top: 2rem;
 }
 
 li {
   max-width: 35ch;
-  margin-bottom: var(--white-space);
+  margin-bottom: 1rem;
 }
 
 .recipieContainer {
@@ -376,7 +376,7 @@ li {
 
 #recipeOfDay {
   width: 100%;
-  padding-top: var(--white-space);
+  padding-top: 1rem;
 }
 
 #recipeOfDay h1 {
@@ -386,7 +386,7 @@ li {
   font-weight: lighter;
 }
 .recipeMedium {
-  margin-top: calc(2 * var(--white-space));
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: center;
@@ -446,7 +446,7 @@ li {
 }
 
 #recipeList {
-  margin-top: var(--white-space);
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 420px));
   column-gap: 2rem;
@@ -609,7 +609,7 @@ section.recipeCard .categoryIndex {
 
 /*--------bread crombs----------------*/
 .breadcrombs {
-  margin-top: var(--white-space);
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -636,7 +636,7 @@ section.recipeCard .categoryIndex {
 }
 
 .aboutMedium {
-  margin-top: calc(2 * var(--white-space));
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
