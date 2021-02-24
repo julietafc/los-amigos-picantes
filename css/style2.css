@@ -748,7 +748,7 @@ section.recipeCard .categoryIndex {
 }
 
 /* HERE ADDED MEDIA QUERY FOR MOBILE VIEW FOR INGREDIENT LIST, GINTARE */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   #the_recipe_list_section {
     display: grid;
     grid-template-areas:
