@@ -121,7 +121,7 @@ section.welcome .welcomeWraper {
 }
 
 .welcome figure {
-  width: 25%;
+  width: min(100%, 25vw);
 }
 
 .welcome p {
