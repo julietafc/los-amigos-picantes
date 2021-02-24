@@ -820,6 +820,10 @@ section.recipeCard .categoryIndex {
 }
 
 @media only screen and (max-width: 400px) {
+  #recipeOfDay h1 {
+    font-size: 3.5rem;
+  }
+
   #recipeList {
     margin-left: -5%;
   }
