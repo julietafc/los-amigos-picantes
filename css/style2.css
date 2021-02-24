@@ -820,6 +820,8 @@ section.recipeCard .categoryIndex {
 }
 
 @media only screen and (max-width: 420px) {
+  
+
   .aboutMedium img {
     display: none;
   }
