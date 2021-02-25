@@ -426,6 +426,18 @@ li {
   font-family: var(--subHeader-font);
 }
 
+.infoMedium h5,
+.recipeCard h5 {
+  font-weight: lighter;
+  font-size: 150%;
+  color: var(--link-hover-color);
+}
+
+.infoMedium h5::first-letter,
+.recipeCard h5::first-letter {
+  text-transform: uppercase;
+}
+
 .infoMedium p {
   font-size: 130%;
   max-width: 40ch;
