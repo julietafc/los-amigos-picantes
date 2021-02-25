@@ -769,6 +769,8 @@ section.recipeCard .categoryIndex {
 .some {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .some li {
   display: inline;
