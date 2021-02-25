@@ -9,30 +9,41 @@ const Phrases = {
   main: "Nothing brings people together like good food",
 };
 
-let categoryId = `&q={"category":"${urlParams.get("category")}"}`;
+const category = urlParams.get("category");
+let subcategory = urlParams.get("subcategory");
 
-if (urlParams.get("category") == "all") {
+let classNameC;
+let subcategoryId;
+let recipe;
+let dropDownValue;
+let recipeOfDay;
+let url;
+let recipeOfTheDay = false;
+let categoryDDmenu = false;
+
+if (category == "all") {
   document.querySelector("#recipeOfDay h1").textContent = Phrases.drink;
-  categoryId = " ";
+  url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25`;
+  if (subcategory) {
+    url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"subcategory":"${subcategory}"}`;
+  }
 } else {
   const Phrase = Phrases[urlParams.get("category")];
   document.querySelector("#recipeOfDay h1").textContent = Phrase;
+  url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"category":"${category}"}`;
+  if (subcategory) {
+    url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"category":"${category}", "subcategory":"${subcategory}"}`;
+  }
 }
 
-document.querySelector(
-  ".breadcrombs a:nth-child(2)"
-).textContent = urlParams.get("category");
+document.querySelector(".breadcrombs a:nth-child(2)").textContent = category;
 
-// const subcategoryId = urlParams.get("subcategory");
-let classNameC;
-let subcategoryId;
-let recipeOfTheDay = false;
-let recipe;
-let categoryDDmenu = false;
-let dropDownValue;
-
-const url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${categoryId}&${subcategoryId}`;
-let recipeOfDay;
+if (subcategory) {
+  document.querySelector(
+    ".breadcrombs a:nth-child(3)"
+  ).textContent = subcategory;
+  subcategoryId = `{"subcategory":"${subcategory}"}`;
+}
 
 //The API-Key
 const options = {
@@ -139,28 +150,43 @@ document.querySelectorAll(".iconMenu div").forEach((item) => {
   item.addEventListener("click", subCategory);
 });
 
+// document.querySelector("#categoryDD").addEventListener("change", categoryDD);
+
+// function categoryDD() {
+//   console.log(document.querySelector("#categoryDD").value);
+//   dropDownValue = document.querySelector("#categoryDD").value;
+//   categoryDDmenu = true;
+//   subCategory();
+// }
+
 function subCategory() {
   console.log("subCategory");
-  removeRecipeCard();
-
-  categoryValue = urlParams.get("category");
+  console.log(this.classList.item(0));
   classNameC = this.classList.item(0);
+  console.log(classNameC);
+  subcategory = classNameC.toLowerCase();
+  location.href = `recipe_list.html?category=${category}&subcategory=${subcategory}#navSubCat`;
 
-  if (urlParams.get("category") == "all") {
-    subcategoryId = `&q={"subcategory":"${classNameC.toLowerCase()}"}`;
-    console.log(subcategoryId);
-  } else {
-    subcategoryId = `&q={"category":"${categoryValue}" , "subcategory":"${classNameC.toLowerCase()}"}`;
-    console.log(subcategoryId);
-  }
-  document.querySelector(
-    ".breadcrombs a:nth-child(3)"
-  ).textContent = classNameC.toLowerCase();
+  //   removeRecipeCard();
 
-  let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
-  fetch(newurl, options)
-    .then((res) => res.json())
-    .then((data) => handleRecipeList(data));
+  //   categoryValue = urlParams.get("category");
+  //   classNameC = this.classList.item(0);
+
+  //   if (urlParams.get("category") == "all") {
+  //     subcategoryId = `&q={"subcategory":"${classNameC.toLowerCase()}"}`;
+  //     console.log(subcategoryId);
+  //   } else {
+  //     subcategoryId = `&q={"category":"${categoryValue}" , "subcategory":"${classNameC.toLowerCase()}"}`;
+  //     console.log(subcategoryId);
+  //   }
+  //   document.querySelector(
+  //     ".breadcrombs a:nth-child(3)"
+  //   ).textContent = classNameC.toLowerCase();
+
+  //   let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
+  //   fetch(newurl, options)
+  //     .then((res) => res.json())
+  //     .then((data) => handleRecipeList(data));
 }
 
 function removeRecipeCard() {
