@@ -723,7 +723,7 @@ section.recipeCard .categoryIndex {
 
 .footer {
   background-color: var(--link-hover-color);
-  position: absolute;
+
   width: 100%;
   padding: 2em 0;
   display: flex;
@@ -752,7 +752,7 @@ section.recipeCard .categoryIndex {
 
 .footer nav ul {
   font-family: var(--secondary-font);
-  font-weight: 100;
+  font-weight: 100%;
   font-size: 1rem;
   display: inline;
 }
