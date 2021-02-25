@@ -241,7 +241,7 @@ div.homeButton:hover {
   padding: 1rem 0;
   background-color: var(--bg-sec-color);
   display: flex;
-  gap: 1rem
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -820,8 +820,6 @@ section.recipeCard .categoryIndex {
 }
 
 @media only screen and (max-width: 420px) {
-  
-
   .aboutMedium img {
     display: none;
   }
