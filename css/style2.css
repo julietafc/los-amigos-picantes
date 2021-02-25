@@ -731,14 +731,25 @@ section.recipeCard .categoryIndex {
 #the_recipe_list_section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 5%;
 }
 
 .ingredient_name {
   text-align: center;
 }
 .ingredients_text {
-  width: 70%;
+  width: 65%;
   margin: auto;
+  margin-bottom: 45%;
+}
+
+.ingredients_img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 30vw;
+  width: 30vw;
+  margin: auto;
+  margin-bottom: 20%;
 }
 
 @media screen and (max-width: 1030px) {
@@ -768,6 +779,11 @@ section.recipeCard .categoryIndex {
     grid-template-columns: 1fr;
   }
 
+  .ingredients_img {
+    height: 50vw;
+    width: 50vw;
+    margin-bottom: 3%;
+  }
   .ingredients_text {
     width: 90%;
     margin-bottom: 30%;
