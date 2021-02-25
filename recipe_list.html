@@ -73,13 +73,29 @@
       <!-- ----navigation subcategory--- -->
 
       <nav class="navSubcategory">
-        <div class="iconMenu">
-          <div class="Vegan"></div>
-          <div class="Vegetarian"></div>
-          <div class="Beef"></div>
-          <div class="Chicken"></div>
-          <div class="Fish"></div>
-          <div class="Pork"></div>
+        <h4>Choose your preference</h4>
+        <div class="icon-dropdown">
+          <div class="iconMenu">
+            <div class="Vegan"><h5>Vegan</h5></div>
+            <div class="Vegetarian"><h5>Vegetarian</h5></div>
+            <div class="Beef"><h5>Beef</h5></div>
+            <div class="Chicken"><h5>Chicken</h5></div>
+            <div class="Fish"><h5>Fish</h5></div>
+            <div class="Pork"><h5>Pork</h5></div>
+          </div>
+          <div class="dropDown-container">
+            <select name="categories" id="categoryDD" class="dropDown">
+              <option disabled selected style="color: white">Categories</option>
+              <option value="all">All</option>
+              <option value="main">Mains</option>
+              <option value="salad">Salads</option>
+              <option value="appetizer">Appetizers</option>
+              <option value="side">Sides</option>
+              <option value="dissert">Disserts</option>
+              <option value="drink">Drinks</option>
+            </select>
+            <span class="custom-arrow"></span>
+          </div>
         </div>
       </nav>
       <!-- ----navigation product list--- -->

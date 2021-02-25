@@ -22,11 +22,14 @@ if (urlParams.get("category") == "all") {
 document.querySelector(
   ".breadcrombs a:nth-child(2)"
 ).textContent = urlParams.get("category");
+
 // const subcategoryId = urlParams.get("subcategory");
 let classNameC;
 let subcategoryId;
 let recipeOfTheDay = false;
 let recipe;
+let categoryDDmenu = false;
+let dropDownValue;
 
 const url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${categoryId}&${subcategoryId}`;
 let recipeOfDay;
@@ -70,7 +73,7 @@ function showRecipe(recipe) {
 
   copy.querySelector("h2").textContent = recipe.name;
   copy.querySelector(".recipeCard>p").textContent = `
-    ${recipe.category} ${recipe.description}`;
+     ${recipe.description}`;
   copy.querySelector(
     "img"
   ).src = `https://kea21s-4746.restdb.io/media/${recipe.img}`;
@@ -136,16 +139,28 @@ document.querySelectorAll(".iconMenu div").forEach((item) => {
   item.addEventListener("click", subCategory);
 });
 
+// document.querySelector("#categoryDD").addEventListener("change", categoryDD);
+
+// function categoryDD() {
+//   console.log(document.querySelector("#categoryDD").value);
+//   dropDownValue = document.querySelector("#categoryDD").value;
+//   categoryDDmenu = true;
+//   subCategory();
+// }
+
 function subCategory() {
   console.log("subCategory");
   removeRecipeCard();
+
+  categoryValue = urlParams.get("category");
   classNameC = this.classList.item(0);
+
   if (urlParams.get("category") == "all") {
     subcategoryId = `&q={"subcategory":"${classNameC.toLowerCase()}"}`;
+    console.log(subcategoryId);
   } else {
-    subcategoryId = `&q={"category":"${urlParams.get(
-      "category"
-    )}" , "subcategory":"${classNameC.toLowerCase()}"}`;
+    subcategoryId = `&q={"category":"${categoryValue}" , "subcategory":"${classNameC.toLowerCase()}"}`;
+    console.log(subcategoryId);
   }
   document.querySelector(
     ".breadcrombs a:nth-child(3)"

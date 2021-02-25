@@ -92,7 +92,7 @@ a {
 /*-----homepage--------------*/
 
 section.welcome {
-  height: 90vh;
+  height: 70vh;
   width: 100%;
   background-image: url(../assets/ella-olsson-4dQiaWKiL-Y-unsplash.jpg);
   background-position: center;
@@ -495,8 +495,18 @@ section.recipeCard .categoryIndex {
 
 .navSubcategory {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(208, 223, 220, 0.568);
+  padding: 1rem;
+}
+
+.icon-dropdown {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .navSubcategory h4 {
@@ -504,21 +514,29 @@ section.recipeCard .categoryIndex {
   font-weight: lighter;
 }
 
+.navSubcategory h5 {
+  font-weight: lighter;
+  font-size: 120%;
+  margin-top: 90%;
+  text-align: center;
+}
+
 .iconMenu {
+  margin-top: 1rem;
   display: flex;
-  column-gap: 2rem;
+
   flex-wrap: wrap;
-  row-gap: 2rem;
 }
 
 .iconMenu div {
+  margin: 0 0 2.5rem 2rem;
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  filter: grayscale(50%);
+  filter: drop-shadow(2px 2px 5px rgba(61, 61, 61, 0.5)) grayscale(50%);
 }
 
 .iconMenu div:hover {
@@ -547,6 +565,42 @@ section.recipeCard .categoryIndex {
 
 .Pork {
   background-image: url(../assets/pork_rc.svg);
+}
+
+.dropDown-container {
+  position: relative;
+  margin-left: 2vw;
+}
+
+.dropDown {
+  padding: 0.5rem 0 0.5rem 1rem;
+  width: 12rem;
+  color: white;
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  background-color: var(--link-hover-color);
+  border: none;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: rgb(14, 83, 104);
+  height: 100%;
+  width: 3rem;
+  pointer-events: none;
+}
+
+.custom-arrow::before {
+  content: "";
+  position: absolute;
+  border-left: 0.65rem solid transparent;
+  border-right: 0.65rem solid transparent;
+  border-top: 0.65rem solid white;
+  left: 30%;
+  top: 45%;
 }
 
 /* -----ingredients---steps------*/
