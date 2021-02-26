@@ -94,10 +94,14 @@ function showRecipeOfDay(recipeOfDay) {
     recipeOfDay.category;
   document.querySelector(
     ".breadcrombs a:nth-child(2)"
-  ).href = `recipe_list.html?category=${recipeOfDay.category}`;
+  ).href = `recipe_list.html?category=${recipeOfDay.category}#navSubCat`;
 
   document.querySelector(".breadcrombs a:nth-child(3)").textContent =
     recipeOfDay.subcategory;
+  document.querySelector(
+    ".breadcrombs a:nth-child(3)"
+  ).href = `recipe_list.html?category=all&subcategory=${recipeOfDay.subcategory}#navSubCat`;
+
   document.querySelector(".breadcrombs a:nth-child(4)").textContent =
     recipeOfDay.name;
 
