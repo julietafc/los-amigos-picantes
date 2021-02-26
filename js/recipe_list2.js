@@ -105,6 +105,7 @@ function showRecipe(recipe) {
   //change content
 
   copy.querySelector("h2").textContent = recipe.name;
+  copy.querySelector("h5").textContent = recipe.category;
   copy.querySelector(".recipeCard>p").textContent = `
      ${recipe.description}`;
   copy.querySelector(
@@ -158,6 +159,7 @@ function showRecipeOfDay(recipeOfDay) {
   let n = 0;
 
   document.querySelector("h2").textContent = recipeOfDay.name;
+  document.querySelector("h5").textContent = recipeOfDay.category;
   document.querySelector(".infoMedium>p").textContent = recipeOfDay.description;
   document.querySelector(
     "#recipeOfDay img"
