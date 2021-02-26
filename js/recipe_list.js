@@ -141,15 +141,6 @@ document.querySelectorAll(".iconMenu div").forEach((item) => {
   item.addEventListener("click", subCategory);
 });
 
-// document.querySelector("#categoryDD").addEventListener("change", categoryDD);
-
-// function categoryDD() {
-//   console.log(document.querySelector("#categoryDD").value);
-//   dropDownValue = document.querySelector("#categoryDD").value;
-//   categoryDDmenu = true;
-//   subCategory();
-// }
-
 function subCategory() {
   console.log("subCategory");
   removeRecipeCard();
