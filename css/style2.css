@@ -503,6 +503,12 @@ section.recipeCard .categoryIndex {
   height: 100%;
 }
 
+section.emptysection {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/-1;
+}
+
 /*-----subcategory navigation-----*/
 
 .navSubcategory {
