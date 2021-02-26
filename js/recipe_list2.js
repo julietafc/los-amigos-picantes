@@ -9,8 +9,12 @@ const Phrases = {
   main: "Nothing brings people together like good food",
 };
 
-const category = urlParams.get("category");
+let category = urlParams.get("category");
 let subcategory = urlParams.get("subcategory");
+
+if (subcategory == "null") {
+  subcategory = "";
+}
 
 let classNameC;
 let subcategoryId;
@@ -25,18 +29,31 @@ if (category == "all") {
   document.querySelector("#recipeOfDay h1").textContent = Phrases.drink;
   url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25`;
   if (subcategory) {
-    url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"subcategory":"${subcategory}"}`;
+    if (subcategory == "vegetarian") {
+      url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"$or":[{"subcategory":"${subcategory}"}, {"subcategory":"vegan"}]}`;
+    } else {
+      url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"subcategory":"${subcategory}"}`;
+    }
   }
 } else {
   const Phrase = Phrases[urlParams.get("category")];
   document.querySelector("#recipeOfDay h1").textContent = Phrase;
   url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"category":"${category}"}`;
   if (subcategory) {
-    url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"category":"${category}", "subcategory":"${subcategory}"}`;
+    if (subcategory) {
+      if (subcategory == "vegetarian") {
+        url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"$and": [{"category":"${category}"}, {"$or":[{"subcategory":"${subcategory}"}, {"subcategory":"vegan"}]}]}`;
+      } else {
+        url = `https://kea21s-4746.restdb.io/rest/recipe-list?max=25&q={"category":"${category}", "subcategory":"${subcategory}"}`;
+      }
+    }
   }
 }
 
 document.querySelector(".breadcrombs a:nth-child(2)").textContent = category;
+document.querySelector(
+  "#categoryDD option:nth-child(1)"
+).textContent = category;
 
 if (subcategory) {
   document.querySelector(
@@ -57,16 +74,21 @@ fetch(url, options)
   .then((data) => handleRecipeList(data));
 
 function handleRecipeList(data) {
-  recipeOfDay = data[Math.floor(Math.random() * data.length)];
-  // recipeOfDay = data[0];
-  if (recipeOfTheDay == false) {
-    showRecipeOfDay(recipeOfDay);
-  }
-  console.log(data.length);
-  if (data.length > 1) {
-    data.forEach(showRecipe);
+  if (data.length) {
+    recipeOfDay = data[Math.floor(Math.random() * data.length)];
+    // recipeOfDay = data[0];
+    if (recipeOfTheDay == false) {
+      showRecipeOfDay(recipeOfDay);
+    }
+    console.log(data.length);
+
+    if (data.length > 1) {
+      data.forEach(showRecipe);
+    } else {
+      showRecipe(data[0]);
+    }
   } else {
-    showRecipe(data[0]);
+    empty();
   }
   console.log("data");
 }
@@ -112,6 +134,22 @@ function showRecipe(recipe) {
   parent.appendChild(copy);
 }
 
+//-------------empty-list---------------------
+function empty() {
+  //grab the template
+  const template = document.querySelector("#emptysection").content;
+  //clone it
+  const copy = template.cloneNode(true);
+  //change content
+
+  copy.querySelector("h1").textContent = "TRY AGAIN!!";
+
+  //grab parent
+  const parent = document.querySelector("#recipeList");
+  //append
+  parent.appendChild(copy);
+}
+
 // -----------recipe of the day-----------------
 
 function showRecipeOfDay(recipeOfDay) {
@@ -120,8 +158,7 @@ function showRecipeOfDay(recipeOfDay) {
   let n = 0;
 
   document.querySelector("h2").textContent = recipeOfDay.name;
-  document.querySelector(".infoMedium>p").textContent = `
-    ${recipeOfDay.category} ${recipeOfDay.description}`;
+  document.querySelector(".infoMedium>p").textContent = recipeOfDay.description;
   document.querySelector(
     "#recipeOfDay img"
   ).src = `https://kea21s-4746.restdb.io/media/${recipeOfDay.img}`;
@@ -144,20 +181,11 @@ function showRecipeOfDay(recipeOfDay) {
 
   recipeOfTheDay = true;
 }
-//--------subcategory-----------
-
+//------category-&-subcategory-----------
+document.querySelector("#categoryDD").addEventListener("change", DDCategory);
 document.querySelectorAll(".iconMenu div").forEach((item) => {
   item.addEventListener("click", subCategory);
 });
-
-// document.querySelector("#categoryDD").addEventListener("change", categoryDD);
-
-// function categoryDD() {
-//   console.log(document.querySelector("#categoryDD").value);
-//   dropDownValue = document.querySelector("#categoryDD").value;
-//   categoryDDmenu = true;
-//   subCategory();
-// }
 
 function subCategory() {
   console.log("subCategory");
@@ -166,27 +194,17 @@ function subCategory() {
   console.log(classNameC);
   subcategory = classNameC.toLowerCase();
   location.href = `recipe_list.html?category=${category}&subcategory=${subcategory}#navSubCat`;
+}
 
-  //   removeRecipeCard();
-
-  //   categoryValue = urlParams.get("category");
-  //   classNameC = this.classList.item(0);
-
-  //   if (urlParams.get("category") == "all") {
-  //     subcategoryId = `&q={"subcategory":"${classNameC.toLowerCase()}"}`;
-  //     console.log(subcategoryId);
-  //   } else {
-  //     subcategoryId = `&q={"category":"${categoryValue}" , "subcategory":"${classNameC.toLowerCase()}"}`;
-  //     console.log(subcategoryId);
-  //   }
-  //   document.querySelector(
-  //     ".breadcrombs a:nth-child(3)"
-  //   ).textContent = classNameC.toLowerCase();
-
-  //   let newurl = `https://kea21s-4746.restdb.io/rest/recipe-list?max=20${subcategoryId}`;
-  //   fetch(newurl, options)
-  //     .then((res) => res.json())
-  //     .then((data) => handleRecipeList(data));
+function DDCategory() {
+  console.log("Category");
+  category = document.querySelector("#categoryDD").value;
+  if (category == "all" || subcategory == "null") {
+    location.href = `recipe_list.html?category=${category}#navSubCat`;
+  } else {
+    location.href = `recipe_list.html?category=${category}&subcategory=${subcategory}#navSubCat`;
+  }
+  console.log(category);
 }
 
 function removeRecipeCard() {
