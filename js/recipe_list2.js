@@ -51,14 +51,10 @@ if (category == "all") {
 }
 
 document.querySelector(".breadcrombs a:nth-child(2)").textContent = category;
-document.querySelector(
-  "#categoryDD option:nth-child(1)"
-).textContent = category;
+document.querySelector("#categoryDD option:nth-child(1)").textContent = category;
 
 if (subcategory) {
-  document.querySelector(
-    ".breadcrombs a:nth-child(3)"
-  ).textContent = subcategory;
+  document.querySelector(".breadcrombs a:nth-child(3)").textContent = subcategory;
   subcategoryId = `{"subcategory":"${subcategory}"}`;
 }
 
@@ -108,9 +104,9 @@ function showRecipe(recipe) {
   copy.querySelector("h5").textContent = recipe.category;
   copy.querySelector(".recipeCard>p").textContent = `
      ${recipe.description}`;
-  copy.querySelector(
-    "img"
-  ).src = `https://kea21s-4746.restdb.io/media/${recipe.img}`;
+  const imgSRC = imgSRCcreator(recipe.name);
+
+  copy.querySelector("img").src = `assets/img-recipes/${imgSRC}`;
 
   copy.querySelector(".tiempo").textContent = recipe.time;
 
@@ -123,9 +119,7 @@ function showRecipe(recipe) {
     }
   }
 
-  copy.querySelector(
-    ".categoryIndex"
-  ).style.backgroundImage = ` url(assets/${recipe.subcategory}_rc.svg)`;
+  copy.querySelector(".categoryIndex").style.backgroundImage = ` url(assets/${recipe.subcategory}_rc.svg)`;
 
   copy.querySelector(".recipeCard a").href = `recipe.html?id=${recipe._id}`;
 
@@ -161,9 +155,10 @@ function showRecipeOfDay(recipeOfDay) {
   document.querySelector("h2").textContent = recipeOfDay.name;
   document.querySelector("h5").textContent = recipeOfDay.category;
   document.querySelector(".infoMedium>p").textContent = recipeOfDay.description;
-  document.querySelector(
-    "#recipeOfDay img"
-  ).src = `https://kea21s-4746.restdb.io/media/${recipeOfDay.img}`;
+
+  const imgSRC = imgSRCcreator(recipeOfDay.name);
+
+  document.querySelector("#recipeOfDay img").src = `assets/img-recipes/${imgSRC}`;
 
   document.querySelector(".tiempo").textContent = recipeOfDay.time;
 
@@ -177,9 +172,7 @@ function showRecipeOfDay(recipeOfDay) {
     }
   }
 
-  document.querySelector(
-    "#recipeOfDay a"
-  ).href = `recipe.html?id=${recipeOfDay._id}`;
+  document.querySelector("#recipeOfDay a").href = `recipe.html?id=${recipeOfDay._id}`;
 
   recipeOfTheDay = true;
 }
@@ -213,4 +206,14 @@ function removeRecipeCard() {
   document.querySelectorAll("#recipeList section").forEach((item) => {
     item.remove();
   });
+}
+
+function imgSRCcreator(name) {
+  name = name.toLowerCase();
+
+  if (name.split(" ").length < 2) {
+    return name + ".jpg";
+  } else {
+    return name.split(" ")[0] + "-" + name.split(" ")[1] + ".jpg";
+  }
 }

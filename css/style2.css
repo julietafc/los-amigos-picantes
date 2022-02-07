@@ -910,6 +910,15 @@ section.emptysection {
 }
 
 @media only screen and (max-width: 420px) {
+  main * {
+    margin-top: 0.5rem;
+  }
+
+  header nav {
+    all: unset;
+    display: none;
+  }
+
   .aboutMedium img {
     display: none;
   }
@@ -925,8 +934,17 @@ section.emptysection {
     padding-bottom: 3rem;
   }
 
+  footer > a {
+    display: none;
+  }
+
   .footer {
     margin-top: 0;
+    flex-wrap: wrap;
+  }
+
+  .some {
+    flex-grow: 2;
   }
 
   .infoAbout {
